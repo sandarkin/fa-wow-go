@@ -1,0 +1,9 @@
+/.idea
+/*.code-workspace
+debug
+
+vendor/
+
+*.exe
+*.out
+*.log

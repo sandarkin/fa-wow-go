@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  server:
+    build:
+      dockerfile: server.Dockerfile
+      context: .
+    restart: always
+
+  client:
+    build:
+      dockerfile: client.Dockerfile
+      context: .
+    restart: always
+    depends_on:
+      - server
+    links:
+      - server
+    environment:
+      - SERVER_ADDR=server:9000
